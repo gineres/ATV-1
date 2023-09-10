@@ -13,8 +13,8 @@ public class GunScript : MonoBehaviour
     [Header("UI Handling")]
     public Text bulletsText;
 
-    private float shootTimer; // Timer for shooting delay
-    private bool isShooting; // Flag to control shooting delay
+    private float shootTimer; 
+    private bool isShooting; 
     private bool autoMode = false;
 
     void Update()
@@ -22,7 +22,6 @@ public class GunScript : MonoBehaviour
         currentBullets = carregador.GetCurrentBullets();
         UpdateUI();
 
-        // Check if the gun is currently shooting and the delay has passed
         if (isShooting)
         {
             shootTimer -= Time.deltaTime;
@@ -32,7 +31,6 @@ public class GunScript : MonoBehaviour
             }
         }
 
-        // If the fire button is held down and there are bullets, shoot continuously
         if (autoMode)
         {
             if (Input.GetMouseButton(0) && currentBullets > 0 && !isShooting)
@@ -50,18 +48,17 @@ public class GunScript : MonoBehaviour
 
     void CallShooting()
     {
-        // Set the shooting delay based on the carregador type
         if (carregador.GetTipoCarregador() == Carregador.Pistol)
         {
-            shootTimer = .2f; // Adjust this value as needed
+            shootTimer = .2f; 
         }
         else if (carregador.GetTipoCarregador() == Carregador.Shotgun)
         {
-            shootTimer = 0.13f; // Adjust this value as needed
+            shootTimer = 0.13f;
         }
         else
         {
-            shootTimer = 0.05f; // Adjust this value as needed
+            shootTimer = 0.05f; 
         }
 
         isShooting = true;
