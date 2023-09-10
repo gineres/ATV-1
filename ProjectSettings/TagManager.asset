@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Mag
   - Gun
+  - BB
   layers:
   - Default
   - TransparentFX

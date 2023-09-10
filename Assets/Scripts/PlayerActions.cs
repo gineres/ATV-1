@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerActions : MonoBehaviour
 {
     public GunScript gunScript;
-    
+
     void OnCollisionEnter(Collision other)
     {
         Debug.Log("ENTROU");
@@ -23,7 +23,7 @@ public class PlayerActions : MonoBehaviour
         } else if (other.gameObject.tag == "Gun")
         {
             CollectibleGun gun = other.gameObject.GetComponent<CollectibleGun>() as CollectibleGun;
-            gunScript.carregador.SetTipoCarregador(gun.gunType); // colocar pra ser flexivel dps
+            gunScript.carregador.SetTipoCarregador(gun.gunType); 
             Destroy(other.gameObject.transform.parent.gameObject);
         }
     }

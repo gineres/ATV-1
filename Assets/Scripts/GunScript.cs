@@ -12,13 +12,30 @@ public class GunScript : MonoBehaviour
 
     [Header("UI Handling")]
     public Text bulletsText;
+    public Text backspinText;
 
     private float shootTimer; 
     private bool isShooting; 
+    private float adjustableBackspin = .02f;
+    private float scrollSensitivity = .1f;
     private bool autoMode = false;
 
     void Update()
     {
+        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        
+        adjustableBackspin += scrollInput * scrollSensitivity;
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (autoMode)
+            {
+                TurnAutoOff();
+            } else {
+                TurnAutoOn();
+            }
+        } 
+
         currentBullets = carregador.GetCurrentBullets();
         UpdateUI();
 
@@ -68,13 +85,14 @@ public class GunScript : MonoBehaviour
     void UpdateUI()
     {
         bulletsText.text = currentBullets.ToString();
+        backspinText.text = "BACKSPIN: " + adjustableBackspin.ToString();
     }
 
     void Shoot()
     {
         GameObject bb = Instantiate(bbObject, bbFirePos.position, bbFirePos.rotation) as GameObject;
         Ball bbScript = bb.GetComponent<Ball>();
-        bbScript.AdjustBallSettings(1.2f, carregador.GetBulletWeight());
+        bbScript.AdjustBallSettings(1.2f, carregador.GetBulletWeight(), adjustableBackspin);
         carregador.SetCurrentBullets(currentBullets - 1);
     }
 
