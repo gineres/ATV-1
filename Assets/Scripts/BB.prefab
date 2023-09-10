@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7938878703864843692}
   - component: {fileID: 4722515079530320910}
   - component: {fileID: 8348485354301640123}
-  - component: {fileID: -6885883440590437770}
   - component: {fileID: 8443650811014141842}
   m_Layer: 0
   m_Name: BB
@@ -130,20 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backspin: 0.02
---- !u!114 &-6885883440590437770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6139651107519201480}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d4648d83e3feed4997f41d7de69879e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 4722515079530320910}
-  backspinDrag: 0.001
 --- !u!96 &8443650811014141842
 TrailRenderer:
   serializedVersion: 2
@@ -217,7 +202,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 0.94444305, b: 0.645283, a: 1}
-      key1: {r: 0.67510295, g: 0.70661503, b: 1, a: 1}
+      key1: {r: 0.67510295, g: 0.70661503, b: 1, a: 0.36078432}
       key2: {r: 0.65880674, g: 0.6918994, b: 1, a: 0}
       key3: {r: 0.51195616, g: 0.5592921, b: 1, a: 0}
       key4: {r: 0.6227748, g: 0.30566037, b: 1, a: 0}
