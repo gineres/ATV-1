@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Ações baseadas no jogo Lemon Cake, onde o jogador tem diversos cursos de ação para poder atender aos clientes.
+
 public enum GameActions
 {
-    GET_ORDER,
-    GET_INGREDIENTS,
-    PREPARE_FOOD,
-    BAKE_FOOD,
-    TAKE_OUT_FOOD,
-    SERVE_FOOD
+    GET_ORDER, // Se refere à ação de anotar os pedidos dos clientes.
+    GET_INGREDIENTS, // Se refere à ação de juntar os ingredientes necessários. Nem toda receita do jogo requer que você busque os ingredientes.
+    PREPARE_FOOD, // Se refere ao ato de preparar a comida. Toda receita precisa passar por esse estágio.
+    BAKE_FOOD, // Se refere a colocar a comida no forno, nem toda receita passa por esse estágio.
+    TAKE_OUT_FOOD, // Se refere ao ato de tirar a comida do forno.
+    SERVE_FOOD // Se refere ao ato de servir a comida para o cliente.
 }
 
 public class GrafoDependencia : MonoBehaviour
