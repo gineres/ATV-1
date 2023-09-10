@@ -7,7 +7,6 @@ public class Ball : MonoBehaviour
     Rigidbody rb;
     // Start is called before the first frame update
     public float backspin = .02f;  // Taxa de rota��o da BB. Ajuste conforme necess�rio.
-
     float bbWeight = 0.0002f;
     float bbStrength = 1.2f;
 

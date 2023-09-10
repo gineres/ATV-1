@@ -26,7 +26,7 @@ public class GunScript : MonoBehaviour
         
         adjustableBackspin += scrollInput * scrollSensitivity;
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (autoMode)
             {
